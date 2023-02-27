@@ -5,7 +5,7 @@
  */
 var convert = function(s, numRows) {
     if(numRows === 1 || s.length < numRows) return s
-    const rows = []
+    let rows = []
     let reverse = false
     let count = 0
     for(let i = 0; i < numRows; i++) rows[i] = []
@@ -14,5 +14,5 @@ var convert = function(s, numRows) {
         reverse ? count-- : count++
         if(count === numRows - 1 || count === 0) reverse = !reverse
     }
-    return rows.reduce((res, str) => res += str.join(''), '')
+    return rows.reduce((acc, str) => acc += str.join(''), '')
 };

@@ -3,7 +3,7 @@
  * @return {number}
  */
 var firstUniqChar = function(s) {
-    let res = ''
+    let res
     const hash = s.split('').reduce((a,n) => {
         a[n] ? a[n]++ : a[n] = 1
         return a
@@ -14,5 +14,5 @@ var firstUniqChar = function(s) {
             break
         }
     }
-    return res === '' ? -1 : s.indexOf(res)
+    return s.indexOf(res)
 };

@@ -8,7 +8,7 @@ var twoSum = function(nums, target) {
     for(let i = 0; i < nums.length; i++) {
         const comp = target - nums[i]
         if(mapped.has(comp)) {
-            return [i, mapped.get(comp)]
+            return [mapped.get(comp), i]
         } else {
             mapped.set(nums[i], i)
         }

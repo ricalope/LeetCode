@@ -7,8 +7,7 @@
  */
 var merge = function(nums1, m, nums2, n) {
     let insert = m + n - 1
-    m--
-    n--
+    m--,n--
     while(n >= 0) {
         if(nums1[m] > nums2[n]) {
             nums1[insert] = nums1[m]
@@ -19,4 +18,5 @@ var merge = function(nums1, m, nums2, n) {
         }
         insert--
     }
+    return nums1
 };

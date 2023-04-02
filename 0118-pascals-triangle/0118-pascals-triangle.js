@@ -3,10 +3,12 @@
  * @return {number[][]}
  */
 var generate = function(numRows) {
-    let roof = [[1]]
+    //set nested array with 1
+    const roof = [[1]]
+    //loop while length of matrix is less than num rows
     while(roof.length < numRows) {
-        let last = roof[roof.length - 1]
-        let next = [1]
+        const last = roof[roof.length - 1]
+        const next = [1]
         for(let i = 0; i < last.length - 1; i++) {
             next.push(last[i] + last[i + 1])
         }

@@ -4,9 +4,12 @@
  */
 var stoneGame = function(piles) {
     let alice = 0, bob = 0
-    for(let [a, b] = [0, piles.length - 1]; a <= b; a++, b--) {
-        if(a % 2 === 0) alice += piles[a] > piles[b] ? piles[a] : piles[b]
-        else bob += piles[a] > piles[b] ? piles[b] : piles[a]
+    while(piles.length) {
+        if(piles.length % 2 === 0) {
+            alice += piles[0] > piles[piles.length - 1] ? piles.shift() : piles.pop() 
+        } else {
+            bob += piles[0] > piles[piles.length - 1] ? piles.pop() : piles.shift()
+        }
     }
     return alice > bob
 };

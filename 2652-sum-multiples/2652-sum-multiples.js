@@ -3,12 +3,11 @@
  * @return {number}
  */
 var sumOfMultiples = function(n) {
-    let arr = []
-    if(n === 1) return [];
-    for(let i = 1; i <= n; i++) {
+    let sum = 0;
+    for(let i = 0; i <= n; i++) {
         if(i % 3 === 0 || i % 5 === 0 || i % 7 === 0) {
-            arr.push(i)
+            sum += i
         }
     }
-    return arr.length > 0 ? arr.reduce((s,n) => s + n) : [];
+    return sum;
 };
